@@ -15,6 +15,7 @@
 		487F4935272875AF00E30081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487F4933272875AF00E30081 /* LaunchScreen.storyboard */; };
 		487F4940272875AF00E30081 /* RoshamboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F493F272875AF00E30081 /* RoshamboTests.swift */; };
 		487F494B272875AF00E30081 /* RoshamboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F494A272875AF00E30081 /* RoshamboUITests.swift */; };
+		487F49592728789400E30081 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F49582728789400E30081 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		487F4946272875AF00E30081 /* RoshamboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshamboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487F494A272875AF00E30081 /* RoshamboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboUITests.swift; sourceTree = "<group>"; };
 		487F494C272875AF00E30081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487F49582728789400E30081 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				487F4928272875AE00E30081 /* AppDelegate.swift */,
 				487F492A272875AE00E30081 /* SceneDelegate.swift */,
 				487F492C272875AE00E30081 /* ViewController.swift */,
+				487F49582728789400E30081 /* GameController.swift */,
 				487F492E272875AE00E30081 /* Main.storyboard */,
 				487F4931272875AF00E30081 /* Assets.xcassets */,
 				487F4933272875AF00E30081 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				487F492D272875AE00E30081 /* ViewController.swift in Sources */,
+				487F49592728789400E30081 /* GameController.swift in Sources */,
 				487F4929272875AE00E30081 /* AppDelegate.swift in Sources */,
 				487F492B272875AE00E30081 /* SceneDelegate.swift in Sources */,
 			);
