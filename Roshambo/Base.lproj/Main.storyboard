@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jBZ-iL-KKa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Play-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,10 +52,11 @@
                             <constraint firstItem="mOG-lu-NCj" firstAttribute="leading" secondItem="zyl-64-oBu" secondAttribute="trailing" constant="16" id="t1R-hQ-maw"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Play" image="gamecontroller.fill" catalog="system" id="jCc-Xo-2lO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="23"/>
+            <point key="canvasLocation" x="1586" y="-300"/>
         </scene>
         <!--Game Controller-->
         <scene sceneID="MGp-oN-WAQ">
@@ -105,16 +106,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-np-L3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382.608695652174" y="23.4375"/>
+            <point key="canvasLocation" x="2597" y="-300"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vvf-Vd-gt6">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jBZ-iL-KKa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9My-9O-CdR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="geN-hJ-6m1" kind="relationship" relationship="viewControllers" id="UpP-rU-1qG"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="zJP-X9-KaV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1N-Uf-Pk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="122"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="Fcv-g0-ccI">
+            <objects>
+                <viewController title="History View Controller" id="geN-hJ-6m1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aTw-JW-MmS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lHX-TS-MZU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" image="clock.fill" catalog="system" id="uui-pP-UKs"/>
+                    <navigationItem key="navigationItem" id="mh3-m1-rYs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81a-ev-mUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1586" y="485"/>
         </scene>
     </scenes>
     <resources>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
         <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
