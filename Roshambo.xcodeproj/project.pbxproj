@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48275A11272F0DA8007A86E9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48275A10272F0DA8007A86E9 /* HistoryViewController.swift */; };
+		48275A14272F126C007A86E9 /* RPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48275A12272F126C007A86E9 /* RPS.swift */; };
+		48275A15272F126C007A86E9 /* RPSMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48275A13272F126C007A86E9 /* RPSMatch.swift */; };
 		487F4929272875AE00E30081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F4928272875AE00E30081 /* AppDelegate.swift */; };
 		487F492B272875AE00E30081 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F492A272875AE00E30081 /* SceneDelegate.swift */; };
 		487F492D272875AE00E30081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F492C272875AE00E30081 /* ViewController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48275A10272F0DA8007A86E9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		48275A12272F126C007A86E9 /* RPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPS.swift; sourceTree = "<group>"; };
+		48275A13272F126C007A86E9 /* RPSMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPSMatch.swift; sourceTree = "<group>"; };
 		487F4925272875AE00E30081 /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487F4928272875AE00E30081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		487F492A272875AE00E30081 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				487F4931272875AF00E30081 /* Assets.xcassets */,
 				487F4933272875AF00E30081 /* LaunchScreen.storyboard */,
 				487F4936272875AF00E30081 /* Info.plist */,
+				48275A10272F0DA8007A86E9 /* HistoryViewController.swift */,
 			);
 			path = Roshambo;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 		489D2E0A272E264B00682618 /* Bean */ = {
 			isa = PBXGroup;
 			children = (
+				48275A12272F126C007A86E9 /* RPS.swift */,
+				48275A13272F126C007A86E9 /* RPSMatch.swift */,
 				489D2E0B272E267E00682618 /* Shape.swift */,
 			);
 			path = Bean;
@@ -275,6 +284,9 @@
 				487F492D272875AE00E30081 /* ViewController.swift in Sources */,
 				487F49592728789400E30081 /* GameController.swift in Sources */,
 				487F4929272875AE00E30081 /* AppDelegate.swift in Sources */,
+				48275A15272F126C007A86E9 /* RPSMatch.swift in Sources */,
+				48275A11272F0DA8007A86E9 /* HistoryViewController.swift in Sources */,
+				48275A14272F126C007A86E9 /* RPS.swift in Sources */,
 				487F492B272875AE00E30081 /* SceneDelegate.swift in Sources */,
 				489D2E0C272E267E00682618 /* Shape.swift in Sources */,
 			);

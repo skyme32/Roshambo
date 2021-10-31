@@ -13,8 +13,9 @@ class GameController: UIViewController {
     
     // MARK: Properties
     // When the ResultsViewController is initialized a userChoice is passed in and an opponent's play is generated.
-    var userChoice: Shape!
-    private let opponentChoice: Shape = Shape.randomShape()
+    var match: RPSMatch!
+    var message: NSString!
+    var picture: UIImage!
     
     // MARK: Outlets
     @IBOutlet private weak var resultImage: UIImageView!
@@ -28,40 +29,69 @@ class GameController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        displayResult()
+        self.resultLabel.text = messageForMatch(match)
+        self.resultImage.image = imageForMatch(match)
     }
     
-    // MARK: UI
-    // The displayResult method generates the image and message for the results of a match.
-    private func displayResult() {
-        // Ideally, most of this would be handled by a model.
-        var imageName: String
-        var text: String
-        let matchup = "\(userChoice.rawValue) vs. \(opponentChoice.rawValue)"
-        
-        // Why is an exclamation point necessary? :)
-        switch (userChoice!, opponentChoice) {
-        case let (user, opponent) where user == opponent:
-            text = "\(matchup): it's a tie!"
-            imageName = "itsATie"
-        case (.Rock, .Scissors), (.Paper, .Rock), (.Scissors, .Paper):
-            text = "You win with \(matchup)!"
-            imageName = "\(userChoice.rawValue)-\(opponentChoice.rawValue)"
-        default:
-            text = "You lose with \(matchup) :(."
-            imageName = "\(opponentChoice.rawValue)-\(userChoice.rawValue)"
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1.5) {
+            self.resultImage.alpha = 1;
         }
-        
-        
-        
-        //imageName = imageName.lowercased()
-        resultImage.image = UIImage(named: imageName)
-        resultLabel.text = text
     }
+    
     
     // MARK: Actions
     @IBAction private func playAgain() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: Messages for Match
+    func messageForMatch(_ match: RPSMatch) -> String {
+        
+        // Handle the tie
+        if match.p1 == match.p2 {
+            return "It's a tie!"
+        }
+        
+        // Here we build up the results message "RockCrushesScissors. You Win!" etc.
+        return match.winner.description + " " + victoryModeString(match.winner) + " " + match.loser.description + ". " + resultString(match)
+    }
+    
+    func resultString(_ match: RPSMatch) -> String {
+        return match.p1.defeats(match.p2) ? "You Win!" : "You Lose!"
+    }
+    
+    func victoryModeString(_ gesture: RPS) -> String {
+        switch (gesture) {
+        case .rock:
+            return "crushes"
+        case .scissors:
+            return "cuts"
+        case .paper:
+            return "covers"
+        }
+    }
+    
+    
+    // MARK: Image for Match
+    func imageForMatch(_ match: RPSMatch) -> UIImage {
+        var name = ""
+        
+        switch (match.winner) {
+        case .rock:
+            name = "Rock-Scissors"
+        case .paper:
+            name = "Paper-Rock"
+        case .scissors:
+            name = "Scissors-Paper"
+        }
+        
+        if match.p1 == match.p2 {
+            name = "itsATie"
+        }
+        return UIImage(named: name)!
     }
     
 }

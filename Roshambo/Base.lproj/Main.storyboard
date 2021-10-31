@@ -21,7 +21,7 @@
                                 <accessibility key="accessibilityConfiguration" hint="Rock"/>
                                 <state key="normal" image="rock"/>
                                 <connections>
-                                    <action selector="playRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQs-c5-anP"/>
+                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hC-mc-aBs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOG-lu-NCj" userLabel="Paper">
@@ -29,7 +29,7 @@
                                 <accessibility key="accessibilityConfiguration" hint="Paper"/>
                                 <state key="normal" image="paper"/>
                                 <connections>
-                                    <action selector="playPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="et7-Gk-v6E"/>
+                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNk-Ih-AdY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-C5-J1K" userLabel="Scissors">
@@ -53,6 +53,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="gamecontroller.fill" catalog="system" id="jCc-Xo-2lO"/>
+                    <connections>
+                        <outlet property="paperButton" destination="mOG-lu-NCj" id="PRo-lc-Ydh"/>
+                        <outlet property="rockButton" destination="zyl-64-oBu" id="Pgb-5E-HLa"/>
+                        <outlet property="scissorsButton" destination="NOB-C5-J1K" id="Z9B-sW-Bgs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,12 +135,54 @@
         <!--History View Controller-->
         <scene sceneID="Fcv-g0-ccI">
             <objects>
-                <viewController title="History View Controller" id="geN-hJ-6m1" sceneMemberID="viewController">
+                <viewController title="History View Controller" id="geN-hJ-6m1" customClass="HistoryViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aTw-JW-MmS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWc-9N-Xir">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Z5U-pw-7nB" detailTextLabel="ewf-LP-O7Q" style="IBUITableViewCellStyleSubtitle" id="Lbf-xI-Gcj">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lbf-xI-Gcj" id="QYV-6J-mO1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5U-pw-7nB">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ewf-LP-O7Q">
+                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="geN-hJ-6m1" id="Ows-Cq-KPU"/>
+                                    <outlet property="delegate" destination="geN-hJ-6m1" id="qA7-0x-dc5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lHX-TS-MZU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="leading" secondItem="lHX-TS-MZU" secondAttribute="leading" id="ADe-WS-Hoi"/>
+                            <constraint firstItem="lHX-TS-MZU" firstAttribute="bottom" secondItem="pWc-9N-Xir" secondAttribute="bottom" id="JeP-q5-e1a"/>
+                            <constraint firstItem="lHX-TS-MZU" firstAttribute="trailing" secondItem="pWc-9N-Xir" secondAttribute="trailing" id="V4S-qD-3AZ"/>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="top" secondItem="lHX-TS-MZU" secondAttribute="top" id="g9h-6w-nFJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="clock.fill" catalog="system" id="uui-pP-UKs"/>
                     <navigationItem key="navigationItem" id="mh3-m1-rYs"/>
