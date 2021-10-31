@@ -56,11 +56,16 @@ class ViewController: UIViewController {
         history.append(match)
         
         // 1st Way: Programmatic View Controller Presentation
-        if (playersMove == RPS.rock || playersMove == RPS.paper) {
-            performSegue(withIdentifier: "play", sender: self)
-        }
+        performSegue(withIdentifier: "play", sender: self)
     }
-
-
+    
+    
+    // MARK: Actions
+    @IBAction func showHistory(_ sender: AnyObject) {
+        let storyboard = self.storyboard
+        let controller = storyboard?.instantiateViewController(withIdentifier: "HistoryViewController")as! HistoryViewController
+        controller.history = self.history
+        self.present(controller, animated: true, completion: nil)
+    }
 }
 

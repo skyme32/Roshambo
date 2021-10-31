@@ -30,7 +30,7 @@ class GameController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.resultLabel.text = messageForMatch(match)
-        self.resultImage.image = imageForMatch(match)
+        self.resultImage.image = match.imageForMatch()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,25 +73,4 @@ class GameController: UIViewController {
             return "covers"
         }
     }
-    
-    
-    // MARK: Image for Match
-    func imageForMatch(_ match: RPSMatch) -> UIImage {
-        var name = ""
-        
-        switch (match.winner) {
-        case .rock:
-            name = "Rock-Scissors"
-        case .paper:
-            name = "Paper-Rock"
-        case .scissors:
-            name = "Scissors-Paper"
-        }
-        
-        if match.p1 == match.p2 {
-            name = "itsATie"
-        }
-        return UIImage(named: name)!
-    }
-    
 }

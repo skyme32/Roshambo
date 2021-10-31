@@ -113,12 +113,12 @@
 				487F492A272875AE00E30081 /* SceneDelegate.swift */,
 				487F492C272875AE00E30081 /* ViewController.swift */,
 				487F49582728789400E30081 /* GameController.swift */,
+				48275A10272F0DA8007A86E9 /* HistoryViewController.swift */,
 				489D2E0A272E264B00682618 /* Bean */,
 				487F492E272875AE00E30081 /* Main.storyboard */,
 				487F4931272875AF00E30081 /* Assets.xcassets */,
 				487F4933272875AF00E30081 /* LaunchScreen.storyboard */,
 				487F4936272875AF00E30081 /* Info.plist */,
-				48275A10272F0DA8007A86E9 /* HistoryViewController.swift */,
 			);
 			path = Roshambo;
 			sourceTree = "<group>";

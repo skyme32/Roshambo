@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - RPSMatch
 // The RPSMatch struct stores the results of a match.
@@ -33,5 +34,36 @@ struct RPSMatch {
         get {
             return p1.defeats(p2) ? p2 : p1
         }
+    }
+    
+    // MARK:
+    func victoryStatusDescription() -> String {
+        if (self.p1 == self.p2) {
+            return "Tie."
+        } else if (self.p1.defeats(self.p2)) {
+            return "Win!"
+        } else {
+            return "Loss."
+        }
+    }
+    
+    
+    // MARK: Image for Match
+    func imageForMatch() -> UIImage {
+        var name = ""
+        
+        switch (self.winner) {
+        case .rock:
+            name = "Rock-Scissors"
+        case .paper:
+            name = "Paper-Rock"
+        case .scissors:
+            name = "Scissors-Paper"
+        }
+        
+        if self.p1 == self.p2 {
+            name = "itsATie"
+        }
+        return UIImage(named: name)!
     }
 }
