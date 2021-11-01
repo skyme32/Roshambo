@@ -31,6 +31,7 @@ class GameController: UIViewController {
         super.viewWillAppear(animated)
         self.resultLabel.text = messageForMatch(match)
         self.resultImage.image = match.imageForMatch()
+        self.title = match.victoryStatusDescription()
     }
     
     override func viewDidAppear(_ animated: Bool) {

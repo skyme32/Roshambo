@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="2495.6521739130435" y="-300"/>
         </scene>
-        <!--Game-->
+        <!--Game Controller-->
         <scene sceneID="MGp-oN-WAQ">
             <objects>
                 <viewController storyboardIdentifier="GameController" id="YKT-h7-TFB" customClass="GameController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                             <constraint firstItem="vVO-Fx-dwE" firstAttribute="centerX" secondItem="If1-dT-wqV" secondAttribute="centerX" id="v9s-Dd-ieQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Game" id="KLa-kf-kF8"/>
+                    <navigationItem key="navigationItem" id="KLa-kf-kF8"/>
                     <connections>
                         <outlet property="resultImage" destination="vVO-Fx-dwE" id="jY8-JE-Rcb"/>
                         <outlet property="resultLabel" destination="gir-qP-pNY" id="FYa-Kx-Q7g"/>

@@ -39,11 +39,11 @@ struct RPSMatch {
     // MARK:
     func victoryStatusDescription() -> String {
         if (self.p1 == self.p2) {
-            return "Tie."
+            return "Tie"
         } else if (self.p1.defeats(self.p2)) {
-            return "Win!"
+            return "Win"
         } else {
-            return "Loss."
+            return "Loss"
         }
     }
     
