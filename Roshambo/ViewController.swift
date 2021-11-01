@@ -39,8 +39,16 @@ class ViewController: UIViewController {
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Notice that this code works for both Scissors and Paper
-        let controller = segue.destination as! GameController
-        controller.match = self.match
+        //let controller = segue.destination as! GameController
+        //controller.match = self.match
+        if segue.identifier == "play" {
+            let controller = segue.destination as! GameController
+            controller.match = self.match
+        } else if segue.identifier == "history" {
+            let controller = segue.destination as! HistoryViewController
+            controller.history = self.history
+        }
+        
     }
     
     

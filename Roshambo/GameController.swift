@@ -43,7 +43,8 @@ class GameController: UIViewController {
     
     // MARK: Actions
     @IBAction private func playAgain() {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

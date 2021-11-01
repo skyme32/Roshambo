@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aWF-j2-cq2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Play-->
+        <!--Play Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <accessibility key="accessibilityConfiguration" hint="Rock"/>
                                 <state key="normal" image="rock"/>
                                 <connections>
-                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hC-mc-aBs"/>
+                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qd-bu-bZK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOG-lu-NCj" userLabel="Paper">
@@ -29,7 +29,7 @@
                                 <accessibility key="accessibilityConfiguration" hint="Paper"/>
                                 <state key="normal" image="paper"/>
                                 <connections>
-                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNk-Ih-AdY"/>
+                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3p-IX-Glo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-C5-J1K" userLabel="Scissors">
@@ -37,18 +37,16 @@
                                 <accessibility key="accessibilityConfiguration" hint="Scissors"/>
                                 <state key="normal" image="scissors"/>
                                 <connections>
-                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Voh-oF-Pph"/>
+                                    <action selector="makeYourMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="946-Uh-c1W"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czN-7J-eyz">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QOk-A9-9Bg"/>
-                                    <barButtonItem title="Game" image="gamecontroller.fill" catalog="system" id="gWI-ZR-Hw8"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xQ8-ic-Uu8"/>
                                     <barButtonItem title="History" image="clock.fill" catalog="system" id="P5D-L8-PbN">
                                         <connections>
-                                            <action selector="showHistory:" destination="BYZ-38-t0r" id="RiI-4y-DMJ"/>
+                                            <segue destination="geN-hJ-6m1" kind="push" identifier="history" id="AS9-Tw-mFz"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XSx-X9-tUs"/>
@@ -69,42 +67,42 @@
                             <constraint firstItem="mOG-lu-NCj" firstAttribute="leading" secondItem="zyl-64-oBu" secondAttribute="trailing" constant="16" id="t1R-hQ-maw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Play" image="gamecontroller.fill" catalog="system" id="jCc-Xo-2lO"/>
+                    <navigationItem key="navigationItem" title="Play Game" id="Cr8-QO-teZ"/>
                     <connections>
                         <outlet property="paperButton" destination="mOG-lu-NCj" id="PRo-lc-Ydh"/>
                         <outlet property="rockButton" destination="zyl-64-oBu" id="Pgb-5E-HLa"/>
                         <outlet property="scissorsButton" destination="NOB-C5-J1K" id="Z9B-sW-Bgs"/>
-                        <segue destination="YKT-h7-TFB" kind="presentation" identifier="play" id="AHG-aY-Cip"/>
+                        <segue destination="YKT-h7-TFB" kind="push" identifier="play" id="6XT-iN-er7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="-300"/>
+            <point key="canvasLocation" x="2495.6521739130435" y="-300"/>
         </scene>
-        <!--Game Controller-->
+        <!--Game-->
         <scene sceneID="MGp-oN-WAQ">
             <objects>
                 <viewController storyboardIdentifier="GameController" id="YKT-h7-TFB" customClass="GameController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="If1-dT-wqV" customClass="Game">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-Fx-dwE">
-                                <rect key="frame" x="132" y="321" width="150" height="200"/>
+                                <rect key="frame" x="132" y="348" width="150" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JCf-HA-KgD"/>
                                     <constraint firstAttribute="height" constant="200" id="kqZ-mE-M0p"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-dp-N0F">
-                                <rect key="frame" x="169" y="291" width="76" height="30"/>
+                                <rect key="frame" x="169" y="318" width="76" height="30"/>
                                 <state key="normal" title="Play Again!"/>
                                 <connections>
                                     <action selector="playAgain" destination="YKT-h7-TFB" eventType="touchUpInside" id="d6Q-Iu-TGA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gir-qP-pNY">
-                                <rect key="frame" x="186.5" y="521" width="41.5" height="21"/>
+                                <rect key="frame" x="186.5" y="548" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -121,7 +119,7 @@
                             <constraint firstItem="vVO-Fx-dwE" firstAttribute="centerX" secondItem="If1-dT-wqV" secondAttribute="centerX" id="v9s-Dd-ieQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KLa-kf-kF8"/>
+                    <navigationItem key="navigationItem" title="Game" id="KLa-kf-kF8"/>
                     <connections>
                         <outlet property="resultImage" destination="vVO-Fx-dwE" id="jY8-JE-Rcb"/>
                         <outlet property="resultLabel" destination="gir-qP-pNY" id="FYa-Kx-Q7g"/>
@@ -129,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-np-L3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="-300"/>
+            <point key="canvasLocation" x="3505.7971014492755" y="-300"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="Fcv-g0-ccI">
@@ -139,16 +137,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-8A-UBe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="OK" id="nT1-Nb-pj0">
-                                        <connections>
-                                            <action selector="dismissHistory:" destination="geN-hJ-6m1" id="vGQ-U9-foA"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWc-9N-Xir">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -187,24 +175,40 @@
                         <viewLayoutGuide key="safeArea" id="lHX-TS-MZU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pWc-9N-Xir" firstAttribute="bottom" secondItem="lHX-TS-MZU" secondAttribute="bottom" id="FS3-oF-zqi"/>
-                            <constraint firstItem="pWc-9N-Xir" firstAttribute="top" secondItem="aPc-8A-UBe" secondAttribute="bottom" id="M2j-aB-ieo"/>
-                            <constraint firstItem="aPc-8A-UBe" firstAttribute="top" secondItem="lHX-TS-MZU" secondAttribute="top" id="NlB-Mh-DEi"/>
-                            <constraint firstItem="pWc-9N-Xir" firstAttribute="trailing" secondItem="lHX-TS-MZU" secondAttribute="trailing" id="T8a-B6-7sx"/>
-                            <constraint firstItem="aPc-8A-UBe" firstAttribute="trailing" secondItem="lHX-TS-MZU" secondAttribute="trailing" id="ghN-Wg-Qce"/>
-                            <constraint firstItem="pWc-9N-Xir" firstAttribute="leading" secondItem="lHX-TS-MZU" secondAttribute="leading" id="ncD-bh-s8U"/>
-                            <constraint firstItem="aPc-8A-UBe" firstAttribute="leading" secondItem="lHX-TS-MZU" secondAttribute="leading" id="qGR-dn-yx5"/>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="top" secondItem="lHX-TS-MZU" secondAttribute="top" id="FPD-nO-fcs"/>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="bottom" secondItem="lHX-TS-MZU" secondAttribute="bottom" id="XlE-IQ-e1g"/>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="trailing" secondItem="lHX-TS-MZU" secondAttribute="trailing" id="fzS-Bi-clG"/>
+                            <constraint firstItem="pWc-9N-Xir" firstAttribute="leading" secondItem="lHX-TS-MZU" secondAttribute="leading" id="pNg-LJ-JKq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="clock.fill" catalog="system" id="uui-pP-UKs"/>
-                    <navigationItem key="navigationItem" id="mh3-m1-rYs"/>
+                    <navigationItem key="navigationItem" title="Results" id="mh3-m1-rYs"/>
                     <connections>
                         <outlet property="tableView" destination="pWc-9N-Xir" id="wOu-5f-wdu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81a-ev-mUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585.5072463768117" y="484.82142857142856"/>
+            <point key="canvasLocation" x="2494" y="464"/>
+        </scene>
+        <!--Play-->
+        <scene sceneID="khr-00-kgw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aWF-j2-cq2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Play" image="gamecontroller.fill" catalog="system" id="jCc-Xo-2lO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZoH-kf-EFu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kn4-RZ-Z3I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuR-5f-Z9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585.5072463768117" y="-300"/>
         </scene>
     </scenes>
     <resources>
